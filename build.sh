@@ -2,7 +2,8 @@
 
 export VERSION=$(xq .project.version pom.xml | tr -d '"')
 echo "Building version: ${VERSION}"
-cat << EOF |> src/main/resources/application.yaml
+mkdir -p src/main/resources
+cat << EOF |> src/main/resources/application.yml
 server.port: 8080
 kafka.servers: []
 EOF
