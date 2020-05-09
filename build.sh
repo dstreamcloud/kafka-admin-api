@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+cd /workspace
 export VERSION=$(xq .project.version pom.xml | tr -d '"')
 echo "Building version: ${VERSION}"
 mkdir -p src/main/resources
