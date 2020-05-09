@@ -4,7 +4,7 @@ cd /workspace
 export VERSION=$(xq .project.version pom.xml | tr -d '"')
 echo "Building version: ${VERSION}"
 mkdir -p src/main/resources
-cat << EOF |> src/main/resources/application.properties
+cat << EOF > src/main/resources/application.properties
 server.port = 8080
 kafka.servers = localhost:9092
 EOF
